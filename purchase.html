@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Покупка виртов</title>
+    <link rel="stylesheet" href="common.css">
+    <style>
+        .purchase-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #2a2a2a;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .server-info {
+            font-size: 1.2rem;
+            color: #ff6b81;
+            margin-bottom: 20px;
+        }
+
+        .amount-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .amount-button {
+            background: linear-gradient(45deg, #ff6b81, #ff4757);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .amount-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .selected-amount-info {
+            font-size: 1.2rem;
+            color: #ff6b81;
+            margin-bottom: 20px;
+        }
+
+        .pay-button {
+            background: linear-gradient(45deg, #81ff6b, #57ff47);
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pay-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Модальные окна */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: #2a2a2a;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .modal-content h2 {
+            color: #ff6b81;
+            margin-bottom: 20px;
+        }
+
+        .modal-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .modal-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-button.confirm {
+            background: linear-gradient(45deg, #81ff6b, #57ff47);
+            color: #fff;
+        }
+
+        .modal-button.cancel {
+            background: linear-gradient(45deg, #ff6b81, #ff4757);
+            color: #fff;
+        }
+
+        .modal-button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="purchase-container">
+            <h1 class="page-title">Покупка виртов</h1>
+            <div class="server-info">Выбранный сервер: <span id="selected-server"></span></div>
+            <div class="balance">Ваш баланс: <span id="balance">0</span> ₽</div>
+            <div class="amount-list">
+                <button class="amount-button" onclick="selectAmount(1000000, 800)">1кк - 800₽</button>
+                <button class="amount-button" onclick="selectAmount(2000000, 1400)">2кк - 1400₽</button>
+                <button class="amount-button" onclick="selectAmount(4000000, 2600)">4кк - 2600₽</button>
+                <button class="amount-button" onclick="selectAmount(8000000, 5000)">8кк - 5000₽</button>
+                <button class="amount-button" onclick="selectAmount(10000000, 6600)">10кк - 6600₽</button>
+            </div>
+            <div class="selected-amount-info" id="selected-amount-info">Выбрано: <span id="selected-amount">0</span> виртов за <span id="selected-price">0</span>₽</div>
+            <button class="pay-button" onclick="processPayment()">Оплатить</button>
+            <button class="back-button" onclick="window.history.back()">Назад</button>
+        </div>
+    </div>
+
+    <!-- Модальное окно для подтверждения оплаты -->
+    <div id="confirmPaymentModal" class="modal">
+        <div class="modal-content">
+            <h2>Вы уверены, что хотите оплатить?</h2>
+            <div class="modal-buttons">
+                <button class="modal-button confirm" onclick="confirmPayment()">Да</button>
+                <button class="modal-button cancel" onclick="closeModal('confirmPaymentModal')">Нет</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для уведомлений -->
+    <div id="notificationModal" class="modal">
+        <div class="modal-content">
+            <h2 id="notificationText"></h2>
+            <button class="modal-button cancel" onclick="closeModal('notificationModal')">Закрыть</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

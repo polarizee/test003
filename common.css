@@ -1,0 +1,220 @@
+/* Основные стили для body */
+body {
+    background-image: url('https://cms-assets.tutsplus.com/cdn-cgi/image/width=850/uploads/users/115/posts/108376/final_image/How_to_Recreate_GTA_6_Background_tutorial_final_image_min.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Затемнение и прозрачность фона */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    z-index: -1;
+}
+
+/* Размытие фона */
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit;
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px);
+    z-index: -2;
+}
+
+/* Контейнер для контента */
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 350px;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+/* Заголовок GTAVIRTSHOP */
+.shop-title {
+    color: #ff6b81;
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 90px rgba(255, 107, 129, 0.7);
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Блок с балансом */
+.balance {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.balance span {
+    font-weight: bold;
+    color: #81ff6b;
+}
+
+/* Кнопки */
+.button-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.button {
+    font-size: 1.2rem;
+    padding: 15px 30px;
+    border-radius: 10px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button.majestic {
+    background: linear-gradient(45deg, #ff6b81, #ff4757);
+}
+
+.button.gta5rp {
+    background: linear-gradient(45deg, #6b81ff, #4757ff);
+}
+
+.button.topup {
+    background: linear-gradient(45deg, #81ff6b, #57ff47);
+    width: 250px;
+}
+
+.button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Кнопка "Назад" */
+.back-button {
+    background: linear-gradient(45deg, #6b81ff, #4757ff);
+    font-size: 1.2rem;
+    padding: 15px 30px;
+    border-radius: 10px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.back-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Модальное окно */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 350px;
+}
+
+.modal-content h2 {
+    color: #ff6b81;
+    margin-bottom: 20px;
+}
+
+.modal-content label {
+    display: block;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.modal-content p {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.modal-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: opacity 0.3s ease;
+}
+
+.modal-button.confirm {
+    background: linear-gradient(45deg, #81ff6b, #57ff47);
+    color: #fff;
+}
+
+.modal-button.cancel {
+    background: linear-gradient(45deg, #ff6b81, #ff4757);
+    color: #fff;
+}
+
+.modal-button:hover {
+    opacity: 0.9;
+}

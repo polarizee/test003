@@ -1,0 +1,15 @@
+/* Уникальные стили для GTA 5 RP */
+.server-button {
+    background: linear-gradient(45deg, #6b81ff, #4757ff);
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.server-button:hover {
+    background: linear-gradient(45deg, #4757ff, #6b81ff);
+}
+
+.page-title {
+    color: #6b81ff;
+    text-shadow: 0 0 10px rgba(107, 129, 255, 0.7);
+}

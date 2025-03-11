@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Majestic</title>
+    <link rel="stylesheet" href="common.css">
+    <style>
+        .server-button {
+            background: linear-gradient(45deg, #ff6b81, #ff4757);
+            font-size: 0.9rem;
+            padding: 10px 20px;
+            border-radius: 8px;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+        }
+
+        .server-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .server-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">Выберите сервер</h1>
+        <div class="server-list">
+            <button class="server-button" onclick="selectServer('New York')">New York</button>
+            <button class="server-button" onclick="selectServer('Detroit')">Detroit</button>
+            <button class="server-button" onclick="selectServer('Chicago')">Chicago</button>
+            <button class="server-button" onclick="selectServer('San Francisco')">San Francisco</button>
+            <button class="server-button" onclick="selectServer('Atlanta')">Atlanta</button>
+            <button class="server-button" onclick="selectServer('San Diego')">San Diego</button>
+            <button class="server-button" onclick="selectServer('Los Angeles')">Los Angeles</button>
+            <button class="server-button" onclick="selectServer('Miami')">Miami</button>
+            <button class="server-button" onclick="selectServer('Las Vegas')">Las Vegas</button>
+            <button class="server-button" onclick="selectServer('Washington')">Washington</button>
+            <button class="server-button" onclick="selectServer('Dallas')">Dallas</button>
+            <button class="server-button" onclick="selectServer('Boston')">Boston</button>
+            <button class="server-button" onclick="selectServer('Houston')">Houston</button>
+            <button class="server-button" onclick="selectServer('Seattle')">Seattle</button>
+        </div>
+        <button class="back-button" onclick="window.location.href='index.html'">Назад</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

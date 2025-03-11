@@ -1,0 +1,15 @@
+/* Уникальные стили для Majestic */
+.server-button {
+    background: linear-gradient(45deg, #ff6b81, #ff4757);
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.server-button:hover {
+    background: linear-gradient(45deg, #ff4757, #ff6b81);
+}
+
+.page-title {
+    color: #ff6b81;
+    text-shadow: 0 0 10px rgba(255, 107, 129, 0.7);
+}

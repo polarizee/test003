@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA 5 RP</title>
+    <link rel="stylesheet" href="common.css">
+    <style>
+        .server-button {
+            background: linear-gradient(45deg, #6b81ff, #4757ff);
+            font-size: 0.9rem;
+            padding: 10px 20px;
+            border-radius: 8px;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+        }
+
+        .server-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .server-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">Выберите сервер</h1>
+        <div class="server-list">
+            <button class="server-button" onclick="selectServer('Downtown')">Downtown</button>
+            <button class="server-button" onclick="selectServer('Strawberry')">Strawberry</button>
+            <button class="server-button" onclick="selectServer('Vinewood')">Vinewood</button>
+            <button class="server-button" onclick="selectServer('Blackberry')">Blackberry</button>
+            <button class="server-button" onclick="selectServer('Insquad')">Insquad</button>
+            <button class="server-button" onclick="selectServer('Sunrise')">Sunrise</button>
+            <button class="server-button" onclick="selectServer('Rainbow')">Rainbow</button>
+            <button class="server-button" onclick="selectServer('Richman')">Richman</button>
+            <button class="server-button" onclick="selectServer('Eclipse')">Eclipse</button>
+            <button class="server-button" onclick="selectServer('La Mesa')">La Mesa</button>
+            <button class="server-button" onclick="selectServer('Burton')">Burton</button>
+            <button class="server-button" onclick="selectServer('Rockford')">Rockford</button>
+            <button class="server-button" onclick="selectServer('Alta')">Alta</button>
+            <button class="server-button" onclick="selectServer('Del Perro')">Del Perro</button>
+            <button class="server-button" onclick="selectServer('Davis')">Davis</button>
+            <button class="server-button" onclick="selectServer('Harmony')">Harmony</button>
+            <button class="server-button" onclick="selectServer('Redwood')">Redwood</button>
+            <button class="server-button" onclick="selectServer('Hawick')">Hawick</button>
+            <button class="server-button" onclick="selectServer('Grapeseed')">Grapeseed</button>
+            <button class="server-button" onclick="selectServer('Murrieta')">Murrieta</button>
+            <button class="server-button" onclick="selectServer('Vespucci')">Vespucci</button>
+        </div>
+        <button class="back-button" onclick="window.location.href='index.html'">Назад</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
