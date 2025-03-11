@@ -142,15 +142,13 @@ body::after {
 
 /* Модальное окно */
 .modal {
-    display: none;
+    display: none; /* Скрыто по умолчанию */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    justify-content: center;
-    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7); /* Затемнение фона */
     z-index: 1000;
 }
 
@@ -162,9 +160,11 @@ body::after {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     width: 90%;
     max-width: 350px;
-}
-
-.modal-content h2 {
+    position: fixed; /* Фиксированное позиционирование */
+    top: 20%; /* Окно будет на 20% от верхнего края экрана */
+    left: 50%;
+    transform: translateX(-50%); /* Центрирование по горизонтали */
+}.modal-content h2 {
     color: #ff6b81;
     margin-bottom: 20px;
 }
