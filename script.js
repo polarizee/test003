@@ -88,8 +88,8 @@ async function submitTopUpRequest() {
     }
 
     // Отправляем уведомление в Telegram
-    const botToken = 'ВАШ_ТОКЕН_БОТА'; // Замените на токен вашего бота
-    const chatId = 'ВАШ_CHAT_ID'; // Замените на ваш chat_id
+    const botToken = '7576456978:AAFin7rvsk_5zr9evGB_3KYkuMe8TpJ1g64'; // Замените на токен вашего бота
+    const chatId = '1365543895'; // Замените на ваш chat_id
     const message = `Новая заявка на пополнение!\nUsername: @${username}\nСумма: ${amount}₽`;
 
     try {
